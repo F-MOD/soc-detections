@@ -1,5 +1,7 @@
 # SOC Detections
 
+[![Validate detections](https://github.com/F-MOD/soc-detections/actions/workflows/validate.yml/badge.svg)](https://github.com/F-MOD/soc-detections/actions/workflows/validate.yml)
+
 Windows detection rules written in **Sigma**, converted to **KQL**, mapped to **MITRE ATT&CK** and paired with a **triage playbook** for the analyst who receives the alert.
 
 > Personal learning project. All testing is done with public datasets of simulated attacks; this repository contains no data or information from any real environment.
