@@ -1,0 +1,30 @@
+name: Validate detections
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Repository checks (fields, UUID, ATT&CK, playbooks)
+        run: python scripts/validate_rules.py
+
+      - name: Sigma syntax check
+        run: sigma check rules/
+
+      - name: Convert rules to KQL (Defender XDR)
+        run: sigma convert -t kusto -p microsoft_xdr rules/

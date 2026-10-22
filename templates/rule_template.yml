@@ -1,0 +1,23 @@
+title: <Short descriptive title>
+id: <UUID v4 - generate one with New-Guid>
+status: experimental   # experimental | test | stable
+description: |
+  What the rule detects and why an attacker would do it.
+references:
+  - https://attack.mitre.org/techniques/TXXXX/
+author: Ferran Mullor Estrach
+date: YYYY-MM-DD
+tags:
+  - attack.<tactic>          # e.g. attack.execution
+  - attack.tXXXX.XXX         # e.g. attack.t1059.001
+logsource:
+  category: process_creation  # process_creation | registry_set | network_connection | ...
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\example.exe'
+    CommandLine|contains: 'pattern'
+  condition: selection
+falsepositives:
+  - Known legitimate cases
+level: medium   # informational | low | medium | high | critical

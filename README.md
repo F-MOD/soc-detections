@@ -1,5 +1,7 @@
 # SOC Detections
 
+[![Validate detections](https://github.com/F-MOD/soc-detections/actions/workflows/validate.yml/badge.svg)](https://github.com/F-MOD/soc-detections/actions/workflows/validate.yml)
+
 Windows detection rules written in **Sigma**, converted to **KQL**, mapped to **MITRE ATT&CK** and paired with a **triage playbook** for the analyst who receives the alert.
 
 > Personal learning project. All testing is done with public datasets of simulated attacks; this repository contains no data or information from any real environment.
@@ -27,7 +29,7 @@ Rules are managed as code instead of being created by hand in a SIEM console:
 
 | Rule | Tactic | Technique | Level | Playbook | Tested |
 |---|---|---|---|---|---|
-   | [PowerShell Encoded Command](rules/windows/process_creation/proc_creation_win_powershell_encoded_cmd.yml) | Execution, Defense Evasion | [T1059.001](https://attack.mitre.org/techniques/T1059/001/), [T1027](https://attack.mitre.org/techniques/T1027/) | Medium | [View](playbooks/proc_creation_win_powershell_encoded_cmd.md) | ✅ |
+   | [PowerShell Encoded Command](rules/windows/process_creation/proc_creation_win_powershell_encoded_cmd.yml) | Execution, Stealth | [T1059.001](https://attack.mitre.org/techniques/T1059/001/), [T1027](https://attack.mitre.org/techniques/T1027/) | Medium | [View](playbooks/proc_creation_win_powershell_encoded_cmd.md) | ✅ |
 
 ## Structure
 
