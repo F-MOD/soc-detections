@@ -1,0 +1,10 @@
+// Test query for proc_creation_win_powershell_encoded_cmd.yml
+// Run in Azure Data Explorer against raw Sysmon data (Sysmon field names, not Defender XDR)
+// Dataset: OTRF Security-Datasets - empire_launcher_vbs
+empire_launcher_vbs
+| where EventID == 1
+| where Image endswith @"\powershell.exe" or Image endswith @"\pwsh.exe"
+    or OriginalFileName in~ ("PowerShell.EXE", "pwsh.dll")
+| where CommandLine contains " -e " or CommandLine contains " -en" or CommandLine contains " -ec "
+    or CommandLine contains " /e " or CommandLine contains " /en" or CommandLine contains " /ec "
+| project UtcTime, Hostname, User, ParentImage, Image, CommandLine

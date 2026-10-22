@@ -1,0 +1,10 @@
+# Datasets are downloaded separately, never committed
+datasets/
+*.json
+*.zip
+*.evtx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
