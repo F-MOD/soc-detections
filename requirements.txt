@@ -1,0 +1,3 @@
+pyyaml>=6.0
+sigma-cli>=1.0
+pysigma-backend-kusto>=0.4
