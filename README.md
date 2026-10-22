@@ -27,13 +27,14 @@ Rules are managed as code instead of being created by hand in a SIEM console:
 
 | Rule | Tactic | Technique | Level | Playbook | Tested |
 |---|---|---|---|---|---|
-| _Work in progress_ | | | | | |
+   | [PowerShell Encoded Command](rules/windows/process_creation/proc_creation_win_powershell_encoded_cmd.yml) | Execution, Defense Evasion | [T1059.001](https://attack.mitre.org/techniques/T1059/001/), [T1027](https://attack.mitre.org/techniques/T1027/) | Medium | [View](playbooks/proc_creation_win_powershell_encoded_cmd.md) | ✅ |
 
 ## Structure
 
 | Folder | Contents |
 |---|---|
 | `rules/` | Sigma rules, organized by platform and log type |
+| `queries/kql/` | KQL generated from the Sigma rules (Defender XDR) |
 | `playbooks/` | One triage playbook per rule |
 | `templates/` | Templates for new rules and playbooks |
 | `tests/` | Datasets used and test log |
